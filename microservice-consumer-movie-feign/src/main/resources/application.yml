@@ -1,9 +1,9 @@
 server:
-  port: 8010
+  port: 8030
 spring:
   application:
     # 指定注册到eureka server上的服务名称
-    name: microservice-consumer-movie
+    name: microservice-consumer-movie-feign
 
 eureka:
   client:
@@ -16,3 +16,4 @@ eureka:
 logging:
   level:
     com.guier.feign.UserFeignClient: debug
+

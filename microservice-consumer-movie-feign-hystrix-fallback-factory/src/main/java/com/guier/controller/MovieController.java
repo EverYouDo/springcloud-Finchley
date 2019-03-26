@@ -1,7 +1,6 @@
 package com.guier.controller;
 
 import com.guier.dao.User;
-import com.guier.feign.FeignMsgClient;
 import com.guier.feign.UserFeignClient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,12 +15,12 @@ public class MovieController {
     @Autowired
     private UserFeignClient userFeignClient;
 
-    @Autowired
-    private FeignMsgClient feignMsgClient;
+//    @Autowired
+//    private FeignMsgClient feignMsgClient;
 
     @GetMapping("/users/{id}")
     public User findById(@PathVariable Long id) {
-        System.out.println(feignMsgClient.findById(id));
+//        System.out.println(feignMsgClient.findById(id));
         return this.userFeignClient.findById(id);
     }
 }
