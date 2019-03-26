@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: microservice-foo    # 对应config server所获取的配置文件的{application}
+  cloud:
+    config:
+      uri: http://localhost:7080/ #Config Client会连接spring.cloud.config.uri的默认值 http://localhost:8888 ，而并非我们配置的 http://localhost:7080/ 。
+      profile: dev            # profile对应config server所获取的配置文件中的{profile}
+      label: master           # 指定Git仓库的分支，对应config server所获取的配置文件的{label}
